@@ -14,3 +14,9 @@
 **default conf file**
 
 `/usr/local/etc/rabbitmq/rabbitmq-env.conf`
+
+**admin tool**
+
+`sudo rabbitmq-plugins enable rabbitmq_management`
+
+http://127.0.0.1:15672/
