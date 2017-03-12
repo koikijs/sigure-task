@@ -1,4 +1,5 @@
 spring.application.name: sigure-task
+server.port: -1
 
 spring.rabbitmq:
   addresses: 127.0.0.1
@@ -8,5 +9,5 @@ spring:
   cloud:
     stream:
       bindings:
-        output1:
+        output:
           destination: test1
