@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableTask
-@EnableBinding(OutputSource.class)
+//@EnableBinding(OutputSource.class)
 public class SigureTaskApplication {
  	@Bean
   	public MyTaskApplication myTask() {
