@@ -1,13 +1,16 @@
-spring.application.name: sigure-task
 server.port: -1
 
-spring.rabbitmq:
-  addresses: 127.0.0.1
-  port: 5672
-
 spring:
-  cloud:
-    stream:
-      bindings:
-        output:
-          destination: test1
+  application.name: sigure-task
+
+  jackson.serialization:
+    write-dates-as-timestamps: false
+
+  rabbitmq:
+    addresses: 127.0.0.1
+    port: 5672
+
+  cloud.stream.bindings:
+    output:
+     destination: test1
+     contentType: application/json

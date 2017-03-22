@@ -1,5 +1,7 @@
 package koikijs.task;
 
+import java.time.ZonedDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -15,11 +17,14 @@ import lombok.extern.slf4j.Slf4j;
 public class MyTaskApplication implements CommandLineRunner {
 	@Autowired
 	private Source source;
-	//private OutputSource outputSource;
 	
 	@Override
 	public void run(String... strings) throws Exception {
 		log.info("Hello World, Spring Cloud Task!");
-		source.output().send(MessageBuilder.withPayload("test queue").build());
+		source.output()
+			.send(MessageBuilder.withPayload(TestMessage.builder()
+					.name("test")
+					.sysDate(ZonedDateTime.now())
+					.build()).build());
 	}
 }
